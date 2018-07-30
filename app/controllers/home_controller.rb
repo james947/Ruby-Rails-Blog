@@ -8,4 +8,7 @@ class HomeController < ApplicationController
   def addpost
     redirect_to root_path
   end
+  def post
+  end
+
 end
