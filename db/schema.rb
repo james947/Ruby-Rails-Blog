@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_071842) do
+ActiveRecord::Schema.define(version: 2018_08_18_132708) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_071842) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.string "subtitile"
+    t.string "subtitle"
     t.string "author"
     t.text "content"
     t.integer "category_id"
