@@ -1,11 +1,38 @@
+
+
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Cras justo odio
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Dapibus ac facilisis in
+    <span class="badge badge-primary badge-pill">2</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Morbi leo risus
+    <span class="badge badge-primary badge-pill">1</span>
+  </li>
+</ul>
+
 <%=form_for :posts, url: '/add-post', html: { class: 'form-horizontal' } do %>
+ <div class="col-md-8">
   <div class="form-group"> 
-    <label for="exampleInputEmail1">Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Enter title..." required>
+    <label for="title">Title</label>
+    <input type="text" class="form-control" name="title" placeholder="..." required>
+  </div>
+  <div class="form-group"> 
+    <label for="subtitle">Subtitle</label>
+    <input type="text" class="form-control" name="subtitle" placeholder="..." required>
+  </div>
+  <div class="form-group"> 
+    <label for="author">Author</label>
+    <input type="text" class="form-control" name="subtitle" placeholder="..." required>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Description</label>
-    <textarea rows=3 class="form-control" name="description"  placeholder="Enter description..." required></textarea>
+    <label for="content">Content</label>
+    <textarea rows=3 class="form-control" name="content"  placeholder="..." required></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-secondary btn-block float-right">Submit</button>
+</div>
 <% end %>

@@ -1,28 +1,33 @@
-<div class="card bg-light">
-<div class="media">
-  <img class="align-self-start mr-3" src=".../64x64" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Top-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-</div>
-</div><br >
-<div class="card bg-light">
-<div class="media">
-  <img class="align-self-start mr-3" src=".../64x64" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Top-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-</div>
-</div><br>
+<div class="row">
+<div class="col-md-4">
+  <ul class="list-group">
+  <% @categories.each do |category| %>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= category.name %>
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>
+  <% end %>
+</ul>
 
-<div class="card bg-light">
-<div class="media">
-  <img class="align-self-start mr-3" src=".../64x64" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Top-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
+
 </div>
+<div class="col-md-4">
+<% @posts.each do |post| %>
+<div class="card" style="width:800px">
+  <div class="card-body">
+    <h1 class="card-title"><%= post.title %></h1>
+    <h4 class="card-text"><%= post.subtitle %></h4>
+    <p><%= post.content %><p>
+
+    <a href="#" class="btn btn-secondary float-right">Read more</a>
+  </div>
+    <div class="card-footer text-muted">
+       <small><%= post.author %></small>
+      <small class="float-right"> <%= post.created_at.strftime('%B %d %Y, %l:%M%P') %></small>
+    </div>
+</div><br>
+<% end %>
+</div>
+
+
 </div>

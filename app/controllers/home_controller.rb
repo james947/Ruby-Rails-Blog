@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def newpost
-    @post = Post.newpost
+     @post = Post.newpost
   end
 
   def addpost
@@ -24,9 +24,12 @@ class HomeController < ApplicationController
     end 
   end
 
-  def post
+  def posts
     @posts = Post.all
+    @categories = Category.all
   end
+
+
 
   def show
   end
