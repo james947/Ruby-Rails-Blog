@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get '/about' => 'home#about'
-  get '/new' => 'home#newpost'
+  get '/posts/new' => 'home#newpost'
   get '/posts' => 'home#posts'
-  post '/add-post' => 'home#addpost'
-
+  post '/posts' => 'home#create'
+  patch '/posts/:id' => 'posts#update'
+  delete '/posts/:id' => 'posts#destroy'
+  get '/about' => 'home#about'
 end

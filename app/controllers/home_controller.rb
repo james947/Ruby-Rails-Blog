@@ -11,10 +11,9 @@ class HomeController < ApplicationController
   end
 
   def newpost
-     @post = Post.newpost
   end
 
-  def addpost
+  def create
     @post = Post.newpost(post_params)
     if @post.save
       flash[:success] = "The post was created!" 
@@ -25,8 +24,13 @@ class HomeController < ApplicationController
   end
 
   def posts
-    @posts = Post.all
-    @categories = Category.all
+    if params[:category].blank?
+      @posts = Post.all.order("created_at DESC")
+      @categories = Category.all.order("created_at DESC")
+      else
+      @category_id = Category.find_by(name: params[:category]).id
+      @posts = Post.where(category_id: @category_id).order("created_at DESC")
+      end
   end
 
 
@@ -52,7 +56,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :category_id, :author)
+    params.require(:post).permit(:title, :subtitle, :content, :category_id, :author)
   end
 
   def find_post
