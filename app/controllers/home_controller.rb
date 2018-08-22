@@ -11,6 +11,7 @@ class HomeController < ApplicationController
   end
 
   def newpost
+    @categories = Category.all.order("created_at DESC")
   end
 
   def create
