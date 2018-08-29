@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @posts = Post.all
   end
 
   def about
@@ -11,16 +12,17 @@ class HomeController < ApplicationController
   end
 
   def newpost
-    @categories = Category.all.order("created_at DESC")
+    @categories = Category.all.order("created_at DESC") 
   end
 
   def create
-    @post = Post.newpost(post_params)
+    @post = Post.new(post_params)
     if @post.save
       flash[:success] = "The post was created!" 
-      redirect_to @post
+      redirect_to posts_url
     else 
-      render ‘newpost’
+      flash[:errors] = @post.errors.full_messages
+      render newpost
     end 
   end
 
@@ -28,12 +30,11 @@ class HomeController < ApplicationController
     if params[:category].blank?
       @posts = Post.all.order("created_at DESC")
       @categories = Category.all.order("created_at DESC")
-      else
+    else
       @category_id = Category.find_by(name: params[:category]).id
       @posts = Post.where(category_id: @category_id).order("created_at DESC")
-      end
+    end
   end
-
 
 
   def show
@@ -57,7 +58,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :subtitle, :content, :category_id, :author)
+    params.permit(:title, :subtitle, :content, :category_id, :author)
   end
 
   def find_post
