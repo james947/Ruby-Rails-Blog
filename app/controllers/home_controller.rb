@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:success] = "The post was created!" 
-      redirect_to posts_url
+      redirect_to posts_path
     else 
       flash[:errors] = @post.errors.full_messages
       render newpost
