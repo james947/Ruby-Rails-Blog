@@ -9,6 +9,8 @@ class HomeController < ApplicationController
   end
 
   def edit
+    @post = Post.find_by(id:params[:id])
+    @categories = Category.all.order("created_at DESC") 
   end
 
   def newpost

@@ -1,35 +1,30 @@
-<% if flash[:errors] %>
-  <% flash[:errors].each do |e| %>
-    <p><%= e %></p>
-  <% end %>
-<% end %>
-
 <div class="row">
 <form class="col s8" action="/posts" method="post">
+<input type="hidden" name="_method" value="patch ">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div class="row">
     <div class="input-field"> 
       <label for="title">Title</label>
-      <input type="text" class="validate" name="title" placeholder="">
+      <input type="text" class="validate" name="title" value="<%= @post.title %>">
       </div>
   </div>
   <div class="row">
   <div class="input-field"> 
     <label for="subtitle">Subtitle</label>
-    <input type="text" class="validate" name="subtitle" placeholder="">
+    <input type="text" class="validate" name="subtitle" value="<%= @post.subtitle %>">
   </div>
   </div>
   <div class="row">
   <div class="input-field"> 
     <label for="author">Author</label>
-    <input type="text" class="validate" name="author" placeholder="">
+    <input type="text" class="validate" name="author" value="<%= @post.author%>">
   </div>
   </div>
 
   <div class="row">
   <div class="input-field">
   <select id="inputState"  class="browser-default" name ="category_id">
-    <option value="" disabled selected>Select Category</option>
+    <option value="<%= @post.category %>" disabled selected>Select Category</option>
     <% @categories.each do |category| %>
         <option value="<%= category.id %>"><%= category.name %></option>
     <% end %>
@@ -40,9 +35,9 @@
   <div class="row">
   <div class="input-field">
     <label for="content">Content</label>
-    <textarea class="materialize-textarea" name="content"></textarea>
+    <textarea class="materialize-textarea" value="<%= @post.content %>" name="content"></textarea>
   </div>
   </div>
-  <button type="submit" class="btn btn-secondary btn-block float-right">Submit</button>
+  <button type="submit" class="btn btn-secondary btn-block float-right">Update</button>
 </form>
 </div>
