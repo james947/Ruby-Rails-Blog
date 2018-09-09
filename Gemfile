@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #pretifies the rails console output
 gem 'hirb'
+
+gem "awesome_print", require:"ap"

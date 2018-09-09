@@ -21,13 +21,13 @@ class HomeController < ApplicationController
       flash[:success] = "The post was created!" 
       redirect_to posts_path
     else 
-      flash[:errors] = @post.errors.full_messages
-      render newpost
+    flash[:errors] = @post.errors.full_messages
+      redirect_to "/posts/new"
     end 
   end
 
   def posts
-    if params[:category].blank?
+    if params[:category_id].blank?
       @posts = Post.all.order("created_at DESC")
       @categories = Category.all.order("created_at DESC")
     else
@@ -36,8 +36,8 @@ class HomeController < ApplicationController
     end
   end
 
-
   def show
+    @post = Post.find_by(id:params[:id])
   end
 
   def update
@@ -47,18 +47,17 @@ class HomeController < ApplicationController
     else
       render ‘edit’
     end
-end
+  end
 
-def destroy
-  @post.destroy
-  flash[:success] = "Post deleted" 
-  redirect_to root_path
-end
+  def destroy
+    @post.destroy
+    flash[:success] = "Post deleted" 
+    redirect_to root_path
+  end
 
   private
-
   def post_params
-    params.permit(:title, :subtitle, :content, :category_id, :author)
+    params. permit(:title, :subtitle, :content, :category_id, :author)
   end
 
   def find_post
