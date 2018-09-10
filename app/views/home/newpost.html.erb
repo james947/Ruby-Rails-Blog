@@ -3,7 +3,8 @@
     <p><%= e %></p>
   <% end %>
 <% end %>
- <div class="row">
+
+<div class="row">
 <form class="col s8" action="/posts" method="post">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div class="row">
@@ -42,6 +43,10 @@
     <textarea class="materialize-textarea" name="content"></textarea>
   </div>
   </div>
+  <div class="row">
+  <div class="input-field">
   <button type="submit" class="btn btn-secondary btn-block float-right">Submit</button>
+  </div>
+  </div>
 </form>
 </div>
