@@ -9,8 +9,8 @@ class HomeController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(id:params[:id])
-    @categories = Category.all.order("created_at DESC") 
+    @category = Category.find_by(id: @post.category_id)
+    @categories = Category.all.order("created_at DESC")
   end
 
   def newpost
@@ -45,9 +45,9 @@ class HomeController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:success] = "Update successful" 
-      redirect_to @post
+      redirect_to "/posts"
     else
-      render ‘edit’
+      redirect_to "/posts"
     end
   end
 

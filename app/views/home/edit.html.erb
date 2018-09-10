@@ -1,6 +1,6 @@
 <div class="row">
-<form class="col s8" action="/posts" method="post">
-<input type="hidden" name="_method" value="patch ">
+<form class="col s8" action="/posts/<%= @post.id %>" method="post">
+<input type="hidden" name="_method" value="patch">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div class="row">
     <div class="input-field"> 
@@ -24,20 +24,22 @@
   <div class="row">
   <div class="input-field">
   <select id="inputState"  class="browser-default" name ="category_id">
-    <option value="<%= @post.category %>" disabled selected>Select Category</option>
-    <% @categories.each do |category| %>
-        <option value="<%= category.id %>"><%= category.name %></option>
+    <% @categories.each do |opt_category| %>
+        <% if @category.id == opt_category.id %>
+            <option value="<%= opt_category.id %>" selected="selected"><%= opt_category.name %></option>
+        <% else %>
+            <option value="<%= opt_category.id %>"><%= opt_category.name %></option>
+        <% end %>
     <% end %>
   </select>
   </div>
   </div>
-
   <div class="row">
   <div class="input-field">
     <label for="content">Content</label>
-    <textarea class="materialize-textarea" value="<%= @post.content %>" name="content"></textarea>
+    <textarea class="materialize-textarea" name="content" value="<%= @post.author %>" ></textarea>
   </div>
   </div>
-  <button type="submit" class="btn btn-secondary btn-block float-right">Update</button>
+  <button type="submit" class="btn right">Update</button>
 </form>
 </div>
