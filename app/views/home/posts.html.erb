@@ -15,9 +15,9 @@
     <h1 class="card-title"><%= post.title %></h1>
     <h5 class="card-text"><%= post.subtitle %></h5>
     <p class="truncate" ><%= post.content %><p>
-    <a href="/posts/<%= post.id %>" class="btn btn-secondary float-right right">Read more</a>
   </div>
-  <div class="card-footer">
+  <div class="card-action">
+    <a class="btn right" href="/posts/<%= post.id %>">Read more</a>
     <small><%= post.author %></small>
     <small><%= post.created_at.strftime('%B %d %Y') %></small>
   </div>

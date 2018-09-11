@@ -5,6 +5,6 @@
     <p><%= @post.content %></p>
     <div class="right">
     <a  href="/posts/<%= @post.id %>/edit" class="waves-effect waves-light  btn-small"><span><i class="far fa-edit"></i> Edit</span></a>
-    <a class="waves-effect waves-light  btn-small"> <span><i class="fas fa-trash-alt"></i> Delete</span></a>
+    <a href="/posts/<%= @post.id %>" data-method="delete" class="waves-effect waves-light  btn-small"> <span><i class="fas fa-trash-alt"></i> Delete</span></a>
     </div>
 </div>
