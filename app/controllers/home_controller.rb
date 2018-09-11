@@ -47,17 +47,17 @@ class HomeController < ApplicationController
       flash[:success] = "Update successful" 
       redirect_to "/posts"
     else
-      redirect_to "/posts"
+      redirect_to "/posts/#{post.id}/edit"
     end
   end
 
   def destroy
     @post.destroy
     flash[:success] = "Post deleted" 
-    redirect_to root_path
+    redirect_to "/posts"
   end
 
-  private
+private
   def post_params
     params. permit(:title, :subtitle, :content, :category_id, :author)
   end

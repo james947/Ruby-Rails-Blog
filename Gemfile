@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb'
 
 gem "awesome_print", require:"ap"
+
+gem 'meta_request'
