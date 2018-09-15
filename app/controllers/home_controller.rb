@@ -45,7 +45,7 @@ class HomeController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:success] = 'Update successful'
-      redirect_to '/posts/#{@post.id}'
+      redirect_to `/posts/#{@post.id}`
     else
       redirect_to '/posts/#{post.id}/edit'
     end
@@ -67,4 +67,3 @@ private
   end
 
 end
-
