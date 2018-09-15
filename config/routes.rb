@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   get '/posts/new' => 'home#newpost'
   get '/posts' => 'home#posts'
-  get '/posts/:id' => 'home#show' 
-  get '/posts/:id/edit' => 'home#edit'
+  get '/posts/:id' => 'home#show', as: 'show'
+  get '/posts/:id/edit' => 'home#edit', as: 'edit'
   get '/about' => 'home#about'
-  post '/posts' => 'home#create'
-  patch '/posts/:id' => 'home#update'
-  delete '/posts/:id' => 'home#destroy'
+  post '/posts' => 'home#create', as: 'create'
+  patch '/posts/:id' => 'home#update', as: 'update'
+  delete '/posts/:id' => 'home#destroy', as: 'destroy'
 end
