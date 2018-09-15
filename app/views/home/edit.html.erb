@@ -3,7 +3,7 @@
     <p><%= e %></p>
   <% end %>
 <% end %>
-
+<%= content_for(:title, "Edit") %>
 <div class="row">
   <form class="col s8" action="/posts/<%= @post.id %>" method="post">
     <input type="hidden" name="_method" value="patch">

@@ -3,7 +3,7 @@
     <p><%= e %></p>
   <% end %>
 <% end %>
-
+<%= content_for(:title, "New Post") %>
 <div class="row">
   <form class="col s8" action="/posts" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
