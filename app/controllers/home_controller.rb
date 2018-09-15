@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :find_post, only: %i[show edit update destroy]
 
   def index
     @posts = Post.all
   end
 
-  def about
-  end
+  def about; end
 
   def edit
     @category = Category.find_by(id: @post.category_id)
@@ -24,7 +25,7 @@ class HomeController < ApplicationController
       redirect_to posts_path
     else
       flash[:errors] = @post.errors.full_messages
-      redirect_to '/posts/new'
+      redirect_to posts_new_path
     end
   end
 
@@ -45,19 +46,21 @@ class HomeController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:success] = 'Update successful'
-      redirect_to `/posts/#{@post.id}`
+      redirect_to update_path(@post.id)
     else
-      redirect_to '/posts/#{post.id}/edit'
+      flash[:errors] = @post.errors.full_messages
+      redirect_to edit_path(@post.id)
     end
   end
 
   def destroy
     @post.destroy
     flash[:success] = 'Post deleted'
-    redirect_to '/posts'
+    redirect_to posts_new_path
   end
 
-private
+  private
+
   def post_params
     params. permit(:title, :subtitle, :content, :category_id, :author)
   end
@@ -65,5 +68,4 @@ private
   def find_post
     @post = Post.find(params[:id])
   end
-
 end

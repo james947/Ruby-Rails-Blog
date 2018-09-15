@@ -1,8 +1,8 @@
-<div class="container">
+<div >
   <p><%= @post.author %>
     <small><%= @post.created_at.strftime('%B %d, %Y') %></small>
   </p>
-    <h1><%= @post.title %></h1>
+    <h1><%= @post.title %></h1><hr>
     <h5><%= @post.subtitle %></h5>
     <p><%= @post.content %></p>
   <div class="right">

@@ -17,7 +17,7 @@
           <p class="truncate" ><%= post.content %><p>
         </div>
         <div class="card-action">
-          <a class="btn right" href="/posts/<%= post.id %>">Read more</a>
+          <%= link_to "Read more", show_path(post.id), class: " btn right" %>
           <small><%= post.author %></small>
           <small><%= post.created_at.strftime('%B %d %Y') %></small>
         </div>
