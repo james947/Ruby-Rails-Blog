@@ -4,7 +4,7 @@
   </p>
     <h1><%= @post.title %></h1><hr>
     <h5><%= @post.subtitle %></h5>
-    <p><%= @post.content %></p>
+    <p><%= sanitize @post.content %></p>
   <div class="right">
     <a  href="/posts/<%= @post.id %>/edit" class="waves-effect waves-light  btn-small">
       <span><i class="far fa-edit"></i> Edit</span>
