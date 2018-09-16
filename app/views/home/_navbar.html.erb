@@ -1,8 +1,10 @@
 <nav class="grey darken-3">
   <div class="nav-wrapper">
-    <div class="col s12 ">
+    <div class="container ">
       <a href="#" class="brand-logo right">TechBase</a>
-      <ul class="left">
+      <a href="#" class="sidenav-trigger" data-target="mobile-links">
+      <i class="material-icons">menu</i>
+      <ul class="right hide-on-med-and-down">
         <li> <%= link_to "Home", root_path %></li>
         <li> <%= link_to "Posts", posts_path %></li>
         <li> <%= link_to "WRITE A POST", posts_new_path,  class:"btn btn-small" %></li>
@@ -11,3 +13,17 @@
     </div>
   </div>
 </nav>
+
+<ul class="sidenav" id="mobile-links">
+    <li><a href="/">Home</a></li>
+    <li><a class="nav-link" href="/posts">Posts</a></li>
+    <li> <a class="nav-link btn btn-small" href="/posts/new">WRITE A POST</a></li>
+    <li><a class="nav-link" href="/about">About</a></li>
+</ul>
+
+
+<script>
+    $(document).ready(function(){
+        $('.sidenav').dropdown();
+    }) 
+</script>
