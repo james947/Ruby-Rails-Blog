@@ -41,8 +41,8 @@
       </div>
       <div class="row">
         <div class="input-field">
-          <label for="content">Content</label>
-          <textarea class="materialize-textarea" name="content" value="<%= @post.author %>" ></textarea>
+          <input id="body" type="hidden" value="<%= @post.content %>" name="content">
+          <trix-editor  autofocus class="trix-content" input="body" data-intro="true"></trix-editor>
         </div>
       </div>
         <button type="submit" class="btn right">Update</button>
