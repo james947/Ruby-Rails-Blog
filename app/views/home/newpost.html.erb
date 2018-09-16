@@ -37,8 +37,8 @@
       </div>
       <div class="row">
         <div class="input-field">
-          <label for="content">Content</label>
-          <textarea class="materialize-textarea" name="content"></textarea>
+          <input id="body" type="hidden" name="content">
+          <trix-editor  autofocus class="trix-content" input="body" data-intro="true"></trix-editor>
         </div>
       </div>
       <div class="row">
