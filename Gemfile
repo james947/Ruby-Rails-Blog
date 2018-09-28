@@ -71,3 +71,4 @@ gem 'meta_request'
 gem 'rails_12factor', group: :production
 
 gem 'trix'
+
