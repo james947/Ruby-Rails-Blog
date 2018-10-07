@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @pagy, @posts = pagy(Post.all.order(created_at: :desc))
   end
 
   def about; end
@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 
   def posts
     if params[:category_id].blank?
-      @posts = Post.all.order(created_at: :desc)
+      @pagy, @posts = pagy(Post.all.order(created_at: :desc), items: 5)
       @categories = Category.all.order(created_at: :desc)
     else
       @category_id = Category.find_by(name: params[:category]).id
@@ -56,7 +56,7 @@ class HomeController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = 'Post deleted'
-    redirect_to posts_new_path
+    redirect_to posts_path
   end
 
   private
