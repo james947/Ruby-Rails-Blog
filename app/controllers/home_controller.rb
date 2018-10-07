@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def about; end
@@ -31,11 +31,11 @@ class HomeController < ApplicationController
 
   def posts
     if params[:category_id].blank?
-      @posts = Post.all.order('created_at DESC')
-      @categories = Category.all.order('created_at DESC')
+      @posts = Post.all.order(created_at: :desc)
+      @categories = Category.all.order(created_at: :desc)
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @posts = Post.where(category_id: @category_id).order('created_at DESC')
+      @posts = Post.where(category_id: @category_id).order(created_at: :desc)
     end
   end
 
