@@ -10,24 +10,25 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <div class="row">
         <div class="input-field">
-          <label for="title">Title</label>
+          <label class="active" for="title">Title</label>
           <input type="text" class="validate" name="title" value="<%= @post.title %>">
           </div>
       </div>
       <div class="row">
         <div class="input-field">
-          <label for="subtitle">Subtitle</label>
+          <label class="active" for="subtitle">Subtitle</label>
           <input type="text" class="validate" name="subtitle" value="<%= @post.subtitle %>">
         </div>
         </div>
       <div class="row">
         <div class="input-field">
-          <label for="author">Author</label>
+          <label class="active" for="author">Author</label>
           <input type="text" class="validate" name="author" value="<%= @post.author%>">
         </div>
       </div>
       <div class="row">
         <div class="input-field">
+        <label class="active" for="category">Category</label><br>
         <select id="inputState"  class="browser-default" name ="category_id">
           <% @categories.each do |opt_category| %>
               <% if @category.id == opt_category.id %>
@@ -41,6 +42,7 @@
       </div>
       <div class="row">
         <div class="input-field">
+          <label class="active" for="category">Content</label><br>
           <input id="body" type="hidden" value="<%= @post.content %>" name="content">
           <trix-editor  autofocus class="trix-content" input="body" data-intro="true"></trix-editor>
         </div>
