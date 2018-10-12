@@ -74,3 +74,7 @@ gem 'rails_12factor', group: :production
 gem 'trix'
 
 gem 'pagy'
+
+gem 'simplecov', require: false, group: :test
+
+gem 'coveralls', require: false
