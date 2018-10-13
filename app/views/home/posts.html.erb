@@ -9,12 +9,11 @@
         <% end %>
       </ul>
   </div>
-  <div class="col s9">
+  <div class="col s7">
     <% @posts.each do |post| %>
-      <div class="card card small hoverable">
+      <div class="card small hoverable">
         <div class="card-content">
-          <h1 class="card-title"><%= post.title %></h1>
-          <h5 class="card-text flow-text"><%= post.subtitle %></h5>
+          <p class="card-title">#<%= post.title %></p>
           <p class="truncate" ><%= sanitize post.content %><p>
         </div>
         <div class="card-action">
@@ -29,4 +28,3 @@
     </div>
   </div>
 </div>
-
