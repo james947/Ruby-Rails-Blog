@@ -1,0 +1,30 @@
+.card{
+    &.small{
+   height: 230px;
+  }
+  .card-title {
+      display: block;
+      line-height: 32px;
+      margin-bottom: 8px;
+      font-weight: 800;
+      font-family: Dank Mono,Consolas,monospace;
+      text-transform: capitalize;
+  }
+  .card-text{
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .card-action{
+    padding: 5px 24px;
+  }
+}
+
+.category{
+  padding: 0px 0px 0px 0px;
+}
+
+#btn{
+  .btn{
+    margin-top: 5px;
+  }
+}
