@@ -16,15 +16,10 @@
   <div class="col s7">
     <% @posts.each do |post| %>
       <div class="card small hoverable">
-
         <div class="card-content">
-          <p class="card-title">
-          #<%= post.title %>>
-           <%= image_tag("jay.jpg", style: 'max-width:5%;', :class => "right", :alt => "img") %>
-          </p> 
+          <p class="card-title">#<%= post.title %></p>
           <p class="truncate" ><%= sanitize post.content %><p>
         </div>
-
         <div class="card-action">
         <div id="btn">
           <%= link_to "Read more", show_path(post.id), class: " btn right" %>
