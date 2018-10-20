@@ -21,7 +21,9 @@
           <p class="truncate" ><%= sanitize post.content %><p>
         </div>
         <div class="card-action">
+        <div id="btn">
           <%= link_to "Read more", show_path(post.id), class: " btn right" %>
+        </div>
           <small><%= post.author %></small>
           <small><%= post.created_at.strftime('%B %d %Y') %></small><br>
           <span><i class="fas fa-thumbs-up"></i> 11</span> <i class="fab fa-readme"></i> 304
