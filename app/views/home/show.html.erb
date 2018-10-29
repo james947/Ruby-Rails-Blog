@@ -2,6 +2,9 @@
   <p><%= @post.author %>
     <small><%= @post.created_at.strftime('%B %d, %Y') %></small>
   </p>
+    <% if @post.image.attached? %>
+      <%= image_tag(@post.image, style:'width:100%') %>
+    <% end %>
     <h1><%= @post.title %></h1><hr>
     <h5><%= @post.subtitle %></h5>
     <p><%= sanitize @post.content %></p>
