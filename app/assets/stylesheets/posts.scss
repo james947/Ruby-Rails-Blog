@@ -28,3 +28,10 @@
     margin-top: 5px;
   }
 }
+
+#truncate{
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
