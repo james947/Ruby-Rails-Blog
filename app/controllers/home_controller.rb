@@ -62,7 +62,7 @@ class HomeController < ApplicationController
   private
 
   def post_params
-    params. permit(:title, :subtitle, :content, :category_id, :author)
+    params. permit(:title, :subtitle, :content, :category_id, :author, :image)
   end
 
   def find_post

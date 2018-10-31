@@ -15,14 +15,17 @@
   </div>
   <div class="col s7">
     <% @posts.each do |post| %>
-      <div class="card small hoverable">
-
+      <div class="card hoverable">
+        <div class="card-image">
+          <% if post.image.attached? %>
+            <%= image_tag(post.image, style:'width:100%') %>
+        <% end %>
+        </div>
         <div class="card-content">
           <p class="card-title">
-          #<%= post.title %>
-           <%= image_tag("jay.jpg", style: 'max-width:5%;', :class => "right", :alt => "img") %>
-          </p> 
-          <p class="truncate" ><%= sanitize post.content %><p>
+          #<%= post.title %></p>
+          <p class="truncate"><%= sanitize post.content %></p>
+           <%= image_tag("jay.jpg", style: 'max-width:5%;', :class => "right", :alt => "img") %><br>
         </div>
 
         <div class="card-action">
