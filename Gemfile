@@ -83,3 +83,5 @@ gem 'simplecov-console', require: false
 
 gem 'loofah'
 
+gem "aws-sdk-s3", require: false
+
