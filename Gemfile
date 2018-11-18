@@ -80,3 +80,8 @@ gem 'simplecov', require: false, group: :test
 gem 'coveralls', require: false
 
 gem 'simplecov-console', require: false
+
+gem 'loofah'
+
+gem "aws-sdk-s3", require: false
+
