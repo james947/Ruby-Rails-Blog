@@ -5,7 +5,7 @@
 <% end %>
 <%= content_for(:title, "Edit") %>
 <div class="row">
-  <form enctype="multipart/form-data" class="col s8" action="/posts/<%= @post.id %>" method="post">
+  <form enctype="multipart/form-data" class="col s12 m8" action="/posts/<%= @post.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <div class="row">
