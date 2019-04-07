@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class HomeController < ApplicationController
+class BlogController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index

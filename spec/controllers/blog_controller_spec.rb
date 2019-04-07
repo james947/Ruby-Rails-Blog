@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe HomeController, type: :controller do
+RSpec.describe BlogController, type: :controller do
   context 'GET #index' do
     it 'returns a successful response' do
       get :index
