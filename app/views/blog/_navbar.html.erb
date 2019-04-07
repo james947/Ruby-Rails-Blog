@@ -1,4 +1,4 @@
-<div class="navbar-sticky">
+<div class="navbar-fixed">
 <nav class="grey darken-3">
   <div class="nav-wrapper">
     <div class="container ">
@@ -7,18 +7,22 @@
         <i class="material-icons">menu</i>
       </a>
       <ul class="right waves-effect hide-on-med-and-down">
-        <li> <%= link_to "Posts", posts_path %></li>
+        <li> <%= link_to "Trending",  posts_path %></li>
+        <li> <%= link_to "Feed", posts_path %></li>
         <li> <%= link_to "WRITE A POST", posts_new_path,  class:"btn btn-small" %></li>
+        <li> <%= link_to "Portfolio",  about_path %></li>
         <li> <%= link_to "About",  about_path %></li>
       </ul>
     </div>
   </div>
 </nav>
-<div>
+</div>
 
 <ul class="sidenav" id="mobile-links">
-  <li> <%= link_to "Posts", posts_path %></li>
+  <li> <%= link_to "Trending",  posts_path %></li>
+  <li> <%= link_to "Feed", posts_path %></li>
   <li> <%= link_to "WRITE A POST", posts_new_path,  class:"btn btn-small" %></li>
+  <li> <%= link_to "Portfolio",  about_path %></li>
   <li> <%= link_to "About",  about_path %></li>
 </ul>
 
@@ -33,4 +37,3 @@
     $('.sidenav').sidenav();
   })
 </script>
-

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  rescue_from Pagy::OutOfRangeError, with: :redirect_to_last_page
+  # rescue_from Pagy::OutOfRangeError, with: :redirect_to_last_page
 
   private
 

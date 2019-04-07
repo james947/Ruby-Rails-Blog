@@ -15,7 +15,16 @@
     font-weight: 400;
   }
   .card-action{
-    padding: 5px 24px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    #btn{
+      a{
+        color:#26a69a;
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -34,4 +43,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.userIcon{
+  border-radius: 70px;
+  float: right;
+  margin-top: 1px;
+
 }
