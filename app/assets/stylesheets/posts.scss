@@ -17,11 +17,12 @@
   .card-action{
     display: flex;
     justify-content: space-between;
-    padding: 15px 24px;
+    padding: 15px;
 
     #btn{
       a{
         color:#26a69a;
+        margin: 0;
       }
     }
   }
