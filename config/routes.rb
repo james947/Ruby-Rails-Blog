@@ -1,12 +1,14 @@
-Rails.application.routes.draw do
-  root 'home#index'
+# frozen_string_literal: true
 
-  get '/posts/new' => 'home#newpost'
-  get '/posts' => 'home#posts'
-  get '/posts/:id' => 'home#show', as: 'show'
-  get '/posts/:id/edit' => 'home#edit', as: 'edit'
-  get '/about' => 'home#about'
-  post '/posts' => 'home#create', as: 'create'
-  patch '/posts/:id' => 'home#update', as: 'update'
-  delete '/posts/:id' => 'home#destroy', as: 'destroy'
+Rails.application.routes.draw do
+  root 'blog#index'
+
+  get '/posts/new' => 'blog#newpost'
+  get '/posts' => 'blog#posts'
+  get '/posts/:id' => 'blog#show', as: 'show'
+  get '/posts/:id/edit' => 'blog#edit', as: 'edit'
+  get '/about' => 'blog#about'
+  post '/posts' => 'blog#create', as: 'create'
+  patch '/posts/:id' => 'blog#update', as: 'update'
+  delete '/posts/:id' => 'blog#destroy', as: 'destroy'
 end

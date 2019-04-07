@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class HomeController < ApplicationController
+class BlogController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index
@@ -62,7 +62,7 @@ class HomeController < ApplicationController
   private
 
   def post_params
-    params. permit(:title, :subtitle, :content, :category_id, :author, :image)
+    params.permit(:title, :subtitle, :content, :category_id, :author, :image)
   end
 
   def find_post
