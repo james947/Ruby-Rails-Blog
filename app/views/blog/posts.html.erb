@@ -32,7 +32,7 @@
           <div><small><%= post.created_at.strftime('%B %d') %></small></div>
           <div class="reading-time"></div>
           <div id="btn">
-            <%= link_to "Read more", show_path(post.id), class: "btnRead right" %>
+            <%= link_to "Read more", show_path(post.id)%>
           </div>
         </div>
       </div>
