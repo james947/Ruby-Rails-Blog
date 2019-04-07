@@ -86,3 +86,6 @@ gem 'simplecov-console', require: false
 gem 'loofah'
 
 gem 'aws-sdk-s3', require: false
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-ujs', '~> 0.1.0'
